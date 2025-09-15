@@ -341,7 +341,7 @@
       function sortOne() {
         var yearMovieHigh = document.querySelector(".yearMovieHigh");
         var dataMovieOneUp = dataMovieOne.data.toSorted(function (a, b) {
-          return a.year - b.year;
+          return b.year - a.year;
         });
         yearMovieHigh.addEventListener("click", function () {
           movieInformation(dataMovieOneUp);
@@ -351,7 +351,7 @@
       function sortTwo() {
         var yearMovieLow = document.querySelector(".yearMovieLow");
         var dataMovieOneDown = dataMovieOne.data.toSorted(function (a, b) {
-          return b.year - a.year;
+          return a.year - b.year;
         });
         yearMovieLow.addEventListener("click", function () {
           movieInformation(dataMovieOneDown);
