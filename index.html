@@ -20,5 +20,351 @@
     <link rel="stylesheet" href="assets/css/solid.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav class="menu">
+        <div class="container">
+          <div class="main_menu flex align-items-center space-between">
+            <ul class="main_menu_list flex">
+              <li>
+                <a href="#">
+                  <em class="fa-regular fa-house mr10"></em>
+                  <p>HOME</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <em class="fa-solid fa-film mr10"></em>
+                  <p>MOVIES</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <em class="fa-solid fa-tv mr10"></em>
+                  <p>SERIES</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <em class="fa-solid fa-masks-theater mr10"></em>
+                  <p>ARTISTS</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <em class="fa-brands fa-android mr10"></em>
+                  <p>APPLICATIONS</p>
+                </a>
+              </li>
+            </ul>
+            <div>
+              <input
+                class="main_menu_search"
+                type="text"
+                placeholder="search..."
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section>
+      <div class="container">
+        <div class="btn flex">
+          <button class="yearMovieHigh">Year Movie High!</button>
+          <button class="yearMovieLow">Year Movie Low!</button>
+          <button class="yearMovieReset">Rest!</button>
+        </div>
+        <div class="main_content"></div>
+      </div>
+    </section>
+    <script>
+      var showContent = document.querySelector(".main_content");
+      var dataMovieOne = {
+        data: [
+          {
+            id: 1,
+            title: "The Shawshank Redemption",
+            poster: "https://moviesapi.codingfront.dev/images/tt0111161.jpg",
+            year: "1994",
+            country: "United States",
+            runtime: "142 min",
+            director: "Frank Darabont",
+            actors: "Tim Robbins, Morgan Freeman, Bob Gunton",
+            plot: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+            imdb_id: "tt0111161",
+            imdb_rating: "9.3",
+            website: "N/A",
+            genres: ["Drama"],
+            images: [
+              "https://moviesapi.codingfront.dev/images/tt0111161_backdrop.jpg",
+            ],
+          },
+          {
+            id: 2,
+            title: "The Godfather",
+            poster: "https://moviesapi.codingfront.dev/images/tt0068646.jpg",
+            year: "1972",
+            country: "United States",
+            runtime: "175 min",
+            director: "Francis Ford Coppola",
+            actors: "Marlon Brando, Al Pacino, James Caan",
+            plot: "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.",
+            imdb_id: "tt0068646",
+            imdb_rating: "9.2",
+            website: "N/A",
+            genres: ["Crime", "Drama"],
+            images: [
+              "https://moviesapi.codingfront.dev/images/tt0068646_backdrop.jpg",
+            ],
+          },
+          {
+            id: 3,
+            title: "The Dark Knight",
+            poster: "https://moviesapi.codingfront.dev/images/tt0468569.jpg",
+            year: "2008",
+            country: "United States, United Kingdom",
+            runtime: "152 min",
+            director: "Christopher Nolan",
+            actors: "Christian Bale, Heath Ledger, Aaron Eckhart",
+            plot: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+            imdb_id: "tt0468569",
+            imdb_rating: "9.1",
+            website: "N/A",
+            genres: ["Action", "Crime", "Drama"],
+            images: [
+              "https://moviesapi.codingfront.dev/images/tt0468569_backdrop.jpg",
+            ],
+          },
+          {
+            id: 4,
+            title: "The Godfather: Part II",
+            poster: "https://moviesapi.codingfront.dev/images/tt0071562.jpg",
+            year: "1974",
+            country: "United States",
+            runtime: "202 min",
+            director: "Francis Ford Coppola",
+            actors: "Al Pacino, Robert De Niro, Robert Duvall",
+            plot: "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
+            imdb_id: "tt0071562",
+            imdb_rating: "9.0",
+            website: "N/A",
+            genres: ["Crime", "Drama"],
+            images: [
+              "https://moviesapi.codingfront.dev/images/tt0071562_backdrop.jpg",
+            ],
+          },
+          {
+            id: 5,
+            title: "12 Angry Men",
+            poster: "https://moviesapi.codingfront.dev/images/tt0050083.jpg",
+            year: "1957",
+            country: "United States",
+            runtime: "96 min",
+            director: "Sidney Lumet",
+            actors: "Henry Fonda, Lee J. Cobb, Martin Balsam",
+            plot: "The jury in a New York City murder trial is frustrated by a single member whose skeptical caution forces them to more carefully consider the evidence before jumping to a hasty verdict.",
+            imdb_id: "tt0050083",
+            imdb_rating: "9.0",
+            website: "N/A",
+            genres: ["Crime", "Drama"],
+            images: [
+              "https://moviesapi.codingfront.dev/images/tt0050083_backdrop.jpg",
+            ],
+          },
+          {
+            id: 6,
+            title: "Schindler's List",
+            poster: "https://moviesapi.codingfront.dev/images/tt0108052.jpg",
+            year: "1993",
+            country: "United States",
+            runtime: "195 min",
+            director: "Steven Spielberg",
+            actors: "Liam Neeson, Ralph Fiennes, Ben Kingsley",
+            plot: "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+            imdb_id: "tt0108052",
+            imdb_rating: "8.9",
+            website: "N/A",
+            genres: ["Biography", "Drama", "History"],
+            images: [
+              "https://moviesapi.codingfront.dev/images/tt0108052_backdrop.jpg",
+            ],
+          },
+          {
+            id: 7,
+            title: "The Lord of the Rings: The Return of the King",
+            poster: "https://moviesapi.codingfront.dev/images/tt0167260.jpg",
+            year: "2003",
+            country: "New Zealand, United States",
+            runtime: "201 min",
+            director: "Peter Jackson",
+            actors: "Elijah Wood, Viggo Mortensen, Ian McKellen",
+            plot: "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+            imdb_id: "tt0167260",
+            imdb_rating: "9.0",
+            website: "N/A",
+            genres: ["Action", "Adventure", "Drama"],
+            images: [
+              "https://moviesapi.codingfront.dev/images/tt0167260_backdrop.jpg",
+            ],
+          },
+          {
+            id: 8,
+            title: "Pulp Fiction",
+            poster: "https://moviesapi.codingfront.dev/images/tt0110912.jpg",
+            year: "1994",
+            country: "United States",
+            runtime: "154 min",
+            director: "Quentin Tarantino",
+            actors: "John Travolta, Uma Thurman, Samuel L. Jackson",
+            plot: "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+            imdb_id: "tt0110912",
+            imdb_rating: "8.9",
+            website: "N/A",
+            genres: ["Crime", "Drama"],
+            images: [
+              "https://moviesapi.codingfront.dev/images/tt0110912_backdrop.jpg",
+            ],
+          },
+          {
+            id: 9,
+            title: "The Lord of the Rings: The Fellowship of the Ring",
+            poster: "https://moviesapi.codingfront.dev/images/tt0120737.jpg",
+            year: "2001",
+            country: "New Zealand, United States",
+            runtime: "178 min",
+            director: "Peter Jackson",
+            actors: "Elijah Wood, Ian McKellen, Orlando Bloom",
+            plot: "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+            imdb_id: "tt0120737",
+            imdb_rating: "8.8",
+            website: "N/A",
+            genres: ["Action", "Adventure", "Drama"],
+            images: [
+              "https://moviesapi.codingfront.dev/images/tt0120737_backdrop.jpg",
+            ],
+          },
+          {
+            id: 10,
+            title: "The Good, the Bad and the Ugly",
+            poster: "https://moviesapi.codingfront.dev/images/tt0060196.jpg",
+            year: "1966",
+            country: "Italy, Spain, West Germany",
+            runtime: "178 min",
+            director: "Sergio Leone",
+            actors: "Clint Eastwood, Eli Wallach, Lee Van Cleef",
+            plot: "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
+            imdb_id: "tt0060196",
+            imdb_rating: "8.8",
+            website: "N/A",
+            genres: ["Adventure", "Western"],
+            images: [
+              "https://moviesapi.codingfront.dev/images/tt0060196_backdrop.jpg",
+            ],
+          },
+          {
+            id: 11,
+            title: "Forrest Gump",
+            poster: "https://moviesapi.codingfront.dev/images/tt0109830.jpg",
+            year: "1994",
+            country: "United States",
+            runtime: "142 min",
+            director: "Robert Zemeckis",
+            actors: "Tom Hanks, Robin Wright, Gary Sinise",
+            plot: "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweeth",
+            imdb_id: "tt0109830",
+            imdb_rating: "8.8",
+            website: "N/A",
+            genres: ["Drama", "Romance"],
+            images: [
+              "https://moviesapi.codingfront.dev/images/tt0109830_backdrop.jpg",
+            ],
+          },
+          {
+            id: 12,
+            title: "Fight Club",
+            poster: "https://moviesapi.codingfront.dev/images/tt0137523.jpg",
+            year: "1999",
+            country: "United States, Germany",
+            runtime: "139 min",
+            director: "David Fincher",
+            actors: "Brad Pitt, Edward Norton, Meat Loaf",
+            plot: "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+            imdb_id: "tt0137523",
+            imdb_rating: "8.8",
+            website: "N/A",
+            genres: ["Drama"],
+            images: [
+              "https://moviesapi.codingfront.dev/images/tt0137523_backdrop.jpg",
+            ],
+          },
+        ],
+        metadata: {
+          current_page: "1",
+          per_page: 12,
+          page_count: 21,
+          total_count: 250,
+        },
+      };
+      function movieInformation(value) {
+        var list = "<div class='movie'>";
+        list += "<ul>";
+        value.map(function (cur, i) {
+          list += `<li class='flex mb30'>`;
+          list += `<div class='d-flex col-25'><img src="
+          ${cur.poster}
+          "/><div class='trailer'><i class='fa-solid fa-clapperboard mr10'></i>Watch Trailer</div></div>`;
+          list += "<div class='col-75'>";
+          list += `<div class='flex wrap pl20 capitalize space-between align-items-center'><h2 class='m0'>movie: ${cur.title}</h2><div><div class='border-b'><em class="fa-regular fa-heart mr10 fs20 love-movie cursor"></em><span class='fs20 color fs-b'>${cur.imdb_rating}</span><span>/10</span></div><div class='background-color text-align border-radius10'>IMDB</div></div></div>`;
+          list += `<div class='d-flex pl20'><ul>`;
+          list += `<li class='padding0 fs20 mb10'><div><em class="fa-solid fa-hard-drive mr10 color"></em>Quality: 1080p WEB-DL</div><div><i class="fa-solid fa-clock mr10 color"></i>Time: ${
+            cur.runtime
+          }</div><div><i class="fa-solid fa-folder-open mr10 color"></i><span>genres:</span><a class='color-white' href="#"> ${cur.genres.join(
+            " ,"
+          )}</a></div><div><i class="fa-solid fa-user-doctor color mr10"></i>Director: ${
+            cur.director
+          }</div><div><i class="fa-solid fa-masks-theater color mr10"></i>Actors: ${
+            cur.actors
+          }</div><div><i class="fa-solid fa-earth-americas color mr10"></i>country: ${
+            cur.country
+          }</div><div><i class="fa-solid fa-calendar-days color mr10"></i>year: ${
+            cur.year
+          }</div><div><p>${cur.plot}</p></div></li>`;
+          list += `</ul></div>`;
+          list += "</div>";
+          list += "</li>";
+        });
+        list += "</ul></div>";
+        showContent.innerHTML = list;
+      }
+      movieInformation(dataMovieOne.data);
+      function sortOne() {
+        var yearMovieHigh = document.querySelector(".yearMovieHigh");
+        var dataMovieOneUp = dataMovieOne.data.toSorted(function (a, b) {
+          return a.year - b.year;
+        });
+        yearMovieHigh.addEventListener("click", function () {
+          movieInformation(dataMovieOneUp);
+        });
+      }
+      sortOne();
+      function sortTwo() {
+        var yearMovieLow = document.querySelector(".yearMovieLow");
+        var dataMovieOneDown = dataMovieOne.data.toSorted(function (a, b) {
+          return b.year - a.year;
+        });
+        yearMovieLow.addEventListener("click", function () {
+          movieInformation(dataMovieOneDown);
+        });
+      }
+      sortTwo();
+      function rest() {
+        var yearMovieReset = document.querySelector(".yearMovieReset");
+        yearMovieReset.addEventListener("click", function () {
+          movieInformation(dataMovieOne.data);
+        });
+      }
+      rest();
+    </script>
+  </body>
 </html>
